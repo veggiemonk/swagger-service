@@ -6,6 +6,7 @@
   :dependencies [[luminus-log4j "0.1.3"]
                  [metosin/compojure-api "1.1.3"]
                  [cljs-ajax "0.5.8"]
+                 [clj-http "2.0.0"]
                  [secretary "1.2.3"]
                  [reagent-utils "0.1.9"]
                  [reagent "0.6.0-rc"]
@@ -74,17 +75,17 @@
       :pretty-print false
       :closure-warnings
       {:externs-validation :off :non-standard-jsdoc :off}}}}}
-  
+
   :figwheel
   {:http-server-root "public"
    :nrepl-port 7002
    :css-dirs ["resources/public/css"]
    :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
-  
+
 
   :profiles
   {:uberjar {:omit-source true
-             
+
              :prep-tasks ["compile" ["cljsbuild" "once" "min"]]
              :aot :all
              :uberjar-name "swagger-service.jar"
@@ -106,7 +107,7 @@
                                  [lein-doo "0.1.6"]
                                  [lein-figwheel "0.5.4-4"]
                                  [org.clojure/clojurescript "1.9.92"]]
-                  
+
                   :doo {:build "test"}
                   :source-paths ["env/dev/clj" "test/clj"]
                   :resource-paths ["env/dev/resources"]
